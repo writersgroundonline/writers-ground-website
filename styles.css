@@ -757,7 +757,6 @@ input, select, textarea { font-family: inherit; }
   margin: 0 auto;
   padding: 80px 24px;
   display: grid;
-  grid-template-columns: 1fr 320px;
   gap: 64px;
   align-items: center;
 }
