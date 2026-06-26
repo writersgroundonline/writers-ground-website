@@ -1002,7 +1002,7 @@ const WG_DATA = {
   ],
 
 
-  funding: [
+  scholarships: [
     { name: "Creative Australia Arts Projects for Individuals & Groups",
       org: "Creative Australia (Writing Australia)", region: "Australia", type: "Project Grant",
       genres: ["All artforms incl. Literature"], deadline: "3 Sep 2025 / 3 Mar 2026 / Annual",
