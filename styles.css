@@ -1103,7 +1103,6 @@ input, select, textarea { font-family: inherit; }
 /* ── About ── */
 .about-page-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: start;
   margin-bottom: 60px;
@@ -1255,7 +1254,7 @@ input, select, textarea { font-family: inherit; }
 
 /* Page Content wrapper */
 .page-content {
-  max-width: 960px;
+  max-width: 1827px;
   margin: 0 auto;
   padding: 60px 24px 80px;
 }
