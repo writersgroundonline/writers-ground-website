@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Writer's Ground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="logo.png" alt="Writer's Ground" class="logo-img" />
+        <span class="logo-text">Writer's Ground</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html#browse" class="nav-link">Browse</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="waitlist.html" class="btn btn-nav">Join the Waitlist</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">The Writer's Ground Blog</div>
+      <h1 class="page-title">Insights, updates, and <em>craft advice</em> for writers.</h1>
+      <p class="page-sub">Platform updates, writing craft guides, publishing insights, and curated resources — written for Australian and New Zealand writers at every stage.</p>
+    </div>
+  </section>
+
+  <!-- BLOG CONTENT -->
+  <div class="page-content">
+
+    <!-- Category filters -->
+    <div class="blog-filters" id="blog-filters">
+      <button class="blog-filter-btn active" data-filter="all">All Posts</button>
+      <button class="blog-filter-btn" data-filter="craft">Writing Craft</button>
+      <button class="blog-filter-btn" data-filter="publishing">Publishing</button>
+      <button class="blog-filter-btn" data-filter="opportunities">Opportunities</button>
+      <button class="blog-filter-btn" data-filter="updates">Site Updates</button>
+      <button class="blog-filter-btn" data-filter="industry">Industry</button>
+    </div>
+
+    <!-- Blog grid -->
+    <div class="blog-grid" id="blog-grid">
+
+      <a href="#" class="blog-card" data-cat="updates">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #f5f0e8, #e8dcc8);">🐾</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Site Updates</div>
+          <div class="blog-title">Welcome to Writer's Ground — Here's What We've Built (And What's Coming)</div>
+          <div class="blog-excerpt">We launched with a free database of 150+ writing opportunities for Australian and New Zealand writers. Here's a tour of what's inside, and a preview of where we're headed.</div>
+          <div class="blog-meta">June 2026 · 4 min read</div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="craft">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #e8f0e8, #d4e8d4);">✍️</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Writing Craft</div>
+          <div class="blog-title">Before Submitting Your Manuscript, Make Sure You've Done These 5 Things</div>
+          <div class="blog-excerpt">Most rejections happen before an editor reads past the first page. Here are five things every writer should check before hitting submit — from formatting to your cover letter.</div>
+          <div class="blog-meta">June 2026 · 6 min read</div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="publishing">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #f0e8f0, #e0d0e8);">📖</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Publishing</div>
+          <div class="blog-title">The Australian Publisher Landscape: Who's Accepting Manuscripts Right Now</div>
+          <div class="blog-excerpt">A breakdown of Australian publishers currently accepting unsolicited manuscripts — including which ones don't require an agent, and what they're actually looking for.</div>
+          <div class="blog-meta">June 2026 · 8 min read</div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="opportunities">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #f5f0e0, #f0e8c8);">🏆</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Opportunities</div>
+          <div class="blog-title">The 10 Best-Paying Writing Markets for Australian Writers in 2026</div>
+          <div class="blog-excerpt">From Overland's $550 print rate to The Sun Magazine's $2,000 for essays — here are the publications that actually pay their writers, and how to get in.</div>
+          <div class="blog-meta">June 2026 · 7 min read</div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="craft">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #e8f0f5, #c8dce8);">🔬</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Writing Craft</div>
+          <div class="blog-title">How to Write a Compelling Cover Letter for Literary Journals</div>
+          <div class="blog-excerpt">Your cover letter is the first thing an editor reads. Here's exactly what to include, what to leave out, and the common mistakes that get submissions rejected before they're read.</div>
+          <div class="blog-meta">June 2026 · 5 min read</div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="industry">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #f5ece8, #e8d8d0);">📊</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Industry</div>
+          <div class="blog-title">What Literary Agents in Australia Are Actually Looking For in 2026</div>
+          <div class="blog-excerpt">We spoke to agents across Australia about what's landing in their inboxes, what they're excited about, and the most common reasons they pass on a manuscript.</div>
+          <div class="blog-meta">June 2026 · 9 min read</div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="opportunities">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #e8f5e8, #c8e8c8);">🎓</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Opportunities</div>
+          <div class="blog-title">$80,000 to Write: A Guide to Australia's Biggest Writing Fellowships</div>
+          <div class="blog-excerpt">The Copyright Agency Author Fellowship offers $80,000 for established writers. The Next Chapter gives $15,000 to emerging voices. Here's how to apply — and who's eligible.</div>
+          <div class="blog-meta">June 2026 · 6 min read</div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="publishing">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #f0f5e8, #dce8c8);">🗺️</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Publishing</div>
+          <div class="blog-title">Self-Publishing vs Traditional Publishing in Australia: A Practical Guide for 2026</div>
+          <div class="blog-excerpt">Both paths have merit. Here's an honest breakdown of the trade-offs — advances, royalties, creative control, timelines, and what the data actually says about author earnings.</div>
+          <div class="blog-meta">June 2026 · 10 min read</div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="craft">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, #f5f0e8, #ede0d0);">🌙</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Writing Craft</div>
+          <div class="blog-title">Writing Flash Fiction: How to Tell a Complete Story in Under 1,000 Words</div>
+          <div class="blog-excerpt">Flash fiction is one of the most competitive and rewarding forms. Here's how to structure a story with a real beginning, middle, and end — without wasting a single word.</div>
+          <div class="blog-meta">June 2026 · 5 min read</div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Coming soon note -->
+    <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--cream); border: 1px solid var(--sand-light); border-radius: 16px;">
+      <div style="font-size: 2rem; margin-bottom: 12px;">✍️</div>
+      <h3 style="font-family: var(--font-serif); color: var(--brown-dark); margin-bottom: 10px;">More posts coming soon.</h3>
+      <p style="color: var(--text-muted); margin-bottom: 24px;">We're publishing new content regularly — craft guides, publishing insights, opportunity roundups, and site updates. Join the waitlist to get notified.</p>
+      <a href="waitlist.html" class="btn btn-primary">Join the Waitlist</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Writer's Ground" class="footer-logo" />
+        <p>A free resource for Australian and New Zealand writers.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <strong>Browse</strong>
+          <a href="index.html#browse">Open Submissions</a>
+          <a href="index.html#browse">Competitions</a>
+          <a href="index.html#browse">Literary Prizes</a>
+          <a href="index.html#browse">Fellowships</a>
+        </div>
+        <div class="footer-col">
+          <strong>&nbsp;</strong>
+          <a href="index.html#browse">Residencies</a>
+          <a href="index.html#browse">Education</a>
+          <a href="index.html#browse">Pays Writers</a>
+          <a href="index.html#browse">Publishers</a>
+        </div>
+        <div class="footer-col">
+          <strong>Writer's Ground</strong>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="events.html">Events</a>
+          <a href="waitlist.html">Join Waitlist</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Writer's Ground · Made with ♥ for Australian writers · Data updated June 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('open');
+    });
+
+    // Blog category filter
+    const filterBtns = document.querySelectorAll('.blog-filter-btn');
+    const cards = document.querySelectorAll('.blog-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.cat === filter) ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

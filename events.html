@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events – Writer's Ground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .events-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 36px auto;
+      max-width: 720px;
+    }
+    .event-preview-card {
+      background: var(--cream);
+      border: 1.5px solid var(--sand-light);
+      border-radius: 12px;
+      padding: 20px;
+      opacity: 0.6;
+      position: relative;
+    }
+    .event-preview-card .ev-date {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--sage);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .event-preview-card .ev-title {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: var(--brown-dark);
+      margin-bottom: 6px;
+    }
+    .event-preview-card .ev-type {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .lock-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="logo.png" alt="Writer's Ground" class="logo-img" />
+        <span class="logo-text">Writer's Ground</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html#browse" class="nav-link">Browse</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="waitlist.html" class="btn btn-nav">Join the Waitlist</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- LOCKED PAGE -->
+  <div class="locked-page">
+    <div class="locked-inner">
+      <div class="locked-badge">🔒 Coming Soon</div>
+      <div class="locked-icon">📅</div>
+      <h1 class="locked-title">Events Calendar</h1>
+      <p class="locked-sub">A curated calendar of writing events — festivals, workshops, launches, panels, and networking nights — for Australian and New Zealand writers. We'll be hosting events on Luma soon.</p>
+
+      <!-- Preview of upcoming event types -->
+      <div class="events-preview">
+        <div class="event-preview-card">
+          <div class="lock-tag">🔒</div>
+          <div class="ev-date">Coming Soon</div>
+          <div class="ev-title">Melbourne Writers Festival</div>
+          <div class="ev-type">📍 Melbourne, VIC · Festival</div>
+        </div>
+        <div class="event-preview-card">
+          <div class="lock-tag">🔒</div>
+          <div class="ev-date">Coming Soon</div>
+          <div class="ev-title">Brisbane Writers Festival</div>
+          <div class="ev-type">📍 Brisbane, QLD · Festival</div>
+        </div>
+        <div class="event-preview-card">
+          <div class="lock-tag">🔒</div>
+          <div class="ev-date">Coming Soon</div>
+          <div class="ev-title">Sydney Writers' Festival</div>
+          <div class="ev-type">📍 Sydney, NSW · Festival</div>
+        </div>
+        <div class="event-preview-card">
+          <div class="lock-tag">🔒</div>
+          <div class="ev-date">Coming Soon</div>
+          <div class="ev-title">Writer's Ground: Online Workshop</div>
+          <div class="ev-type">💻 Online · Workshop</div>
+        </div>
+        <div class="event-preview-card">
+          <div class="lock-tag">🔒</div>
+          <div class="ev-date">Coming Soon</div>
+          <div class="ev-title">New Zealand Festival of the Arts</div>
+          <div class="ev-type">📍 Wellington, NZ · Festival</div>
+        </div>
+        <div class="event-preview-card">
+          <div class="lock-tag">🔒</div>
+          <div class="ev-date">Coming Soon</div>
+          <div class="ev-title">Emerging Writers' Festival</div>
+          <div class="ev-type">📍 Melbourne, VIC · Festival</div>
+        </div>
+      </div>
+
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Join the waitlist to be notified when the Events Calendar goes live.</p>
+      <a href="waitlist.html" class="btn btn-primary btn-lg">Join the Waitlist →</a>
+      <div style="margin-top: 20px;">
+        <a href="index.html" style="color: var(--sage); font-size: 0.9rem;">← Back to Browse Opportunities</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Writer's Ground" class="footer-logo" />
+        <p>A free resource for Australian and New Zealand writers.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <strong>Browse</strong>
+          <a href="index.html#browse">Open Submissions</a>
+          <a href="index.html#browse">Competitions</a>
+          <a href="index.html#browse">Literary Prizes</a>
+          <a href="index.html#browse">Fellowships</a>
+        </div>
+        <div class="footer-col">
+          <strong>&nbsp;</strong>
+          <a href="index.html#browse">Residencies</a>
+          <a href="index.html#browse">Education</a>
+          <a href="index.html#browse">Pays Writers</a>
+          <a href="index.html#browse">Publishers</a>
+        </div>
+        <div class="footer-col">
+          <strong>Writer's Ground</strong>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="events.html">Events</a>
+          <a href="waitlist.html">Join Waitlist</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Writer's Ground · Made with ♥ for Australian writers · Data updated June 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

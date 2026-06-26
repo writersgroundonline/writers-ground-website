@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources – Writer's Ground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .resources-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px auto;
+      max-width: 700px;
+    }
+    .resource-preview-card {
+      background: var(--cream);
+      border: 1.5px solid var(--sand-light);
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+      position: relative;
+      opacity: 0.65;
+    }
+    .resource-preview-card .r-icon { font-size: 2rem; margin-bottom: 10px; }
+    .resource-preview-card .r-title { font-family: var(--font-serif); font-size: 0.95rem; color: var(--brown-dark); margin-bottom: 6px; }
+    .resource-preview-card .r-type { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .lock-overlay {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="logo.png" alt="Writer's Ground" class="logo-img" />
+        <span class="logo-text">Writer's Ground</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html#browse" class="nav-link">Browse</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="waitlist.html" class="btn btn-nav">Join the Waitlist</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- LOCKED PAGE -->
+  <div class="locked-page">
+    <div class="locked-inner">
+      <div class="locked-badge">🔒 Coming Soon</div>
+      <div class="locked-icon">📚</div>
+      <h1 class="locked-title">Resources Library</h1>
+      <p class="locked-sub">A free library of downloadable resources created by Writer's Ground — query letter templates, novel pitch checklists, submission trackers, genre guides, and more. We're building it now.</p>
+
+      <!-- Preview of what's coming -->
+      <div class="resources-preview">
+        <div class="resource-preview-card">
+          <div class="lock-overlay">🔒</div>
+          <div class="r-icon">📝</div>
+          <div class="r-title">Query Letter Template</div>
+          <div class="r-type">Free Download</div>
+        </div>
+        <div class="resource-preview-card">
+          <div class="lock-overlay">🔒</div>
+          <div class="r-icon">✅</div>
+          <div class="r-title">Novel Pitch Checklist</div>
+          <div class="r-type">Free Download</div>
+        </div>
+        <div class="resource-preview-card">
+          <div class="lock-overlay">🔒</div>
+          <div class="r-icon">📊</div>
+          <div class="r-title">Submission Tracker</div>
+          <div class="r-type">Free Download</div>
+        </div>
+        <div class="resource-preview-card">
+          <div class="lock-overlay">🔒</div>
+          <div class="r-icon">🗺️</div>
+          <div class="r-title">Genre Guide: Literary Fiction</div>
+          <div class="r-type">Free Download</div>
+        </div>
+        <div class="resource-preview-card">
+          <div class="lock-overlay">🔒</div>
+          <div class="r-icon">🤝</div>
+          <div class="r-title">Agent Submission Pack</div>
+          <div class="r-type">Free Download</div>
+        </div>
+        <div class="resource-preview-card">
+          <div class="lock-overlay">🔒</div>
+          <div class="r-icon">💰</div>
+          <div class="r-title">Freelance Rate Guide</div>
+          <div class="r-type">Free Download</div>
+        </div>
+      </div>
+
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Join the waitlist to be notified when the Resources Library launches.</p>
+      <a href="waitlist.html" class="btn btn-primary btn-lg">Join the Waitlist →</a>
+      <div style="margin-top: 20px;">
+        <a href="index.html" style="color: var(--sage); font-size: 0.9rem;">← Back to Browse Opportunities</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Writer's Ground" class="footer-logo" />
+        <p>A free resource for Australian and New Zealand writers.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <strong>Browse</strong>
+          <a href="index.html#browse">Open Submissions</a>
+          <a href="index.html#browse">Competitions</a>
+          <a href="index.html#browse">Literary Prizes</a>
+          <a href="index.html#browse">Fellowships</a>
+        </div>
+        <div class="footer-col">
+          <strong>&nbsp;</strong>
+          <a href="index.html#browse">Residencies</a>
+          <a href="index.html#browse">Education</a>
+          <a href="index.html#browse">Pays Writers</a>
+          <a href="index.html#browse">Publishers</a>
+        </div>
+        <div class="footer-col">
+          <strong>Writer's Ground</strong>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="events.html">Events</a>
+          <a href="waitlist.html">Join Waitlist</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Writer's Ground · Made with ♥ for Australian writers · Data updated June 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

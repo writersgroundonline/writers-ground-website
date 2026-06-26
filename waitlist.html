@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Waitlist – Writer's Ground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .waitlist-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .waitlist-page-hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 100px 24px 60px;
+      background: var(--cream);
+    }
+    .waitlist-page-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    @media (max-width: 700px) {
+      .waitlist-page-inner { grid-template-columns: 1fr; gap: 40px; }
+      .waitlist-form-col { order: -1; }
+    }
+    .waitlist-left .eyebrow { color: var(--sage); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .waitlist-left h1 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--brown-dark); margin-bottom: 16px; line-height: 1.25; }
+    .waitlist-left p { color: var(--text-muted); line-height: 1.8; margin-bottom: 28px; }
+    .waitlist-benefits { list-style: none; padding: 0; margin: 0 0 32px; }
+    .waitlist-benefits li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+    .waitlist-benefits li .b-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .waitlist-form-col {
+      background: white;
+      border: 1.5px solid var(--sand-light);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 24px rgba(44,26,14,0.08);
+    }
+    .waitlist-form-col h2 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--brown-dark); margin-bottom: 8px; }
+    .waitlist-form-col .form-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 28px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--brown-dark); margin-bottom: 6px; }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--sand-light);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--brown-dark);
+      background: var(--cream);
+      box-sizing: border-box;
+      transition: border-color 0.15s;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--sage);
+    }
+    .form-group input::placeholder { color: #bbb; }
+    .interests-label { font-size: 0.85rem; font-weight: 600; color: var(--brown-dark); margin-bottom: 10px; display: block; }
+    .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+    .interest-check { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--brown); cursor: pointer; }
+    .interest-check input[type="checkbox"] { accent-color: var(--sage); width: 15px; height: 15px; }
+    .form-submit { width: 100%; padding: 13px; background: var(--brown-dark); color: var(--cream); border: none; border-radius: 10px; font-family: var(--font-serif); font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .form-submit:hover { background: var(--brown); }
+    .form-note { font-size: 0.78rem; color: #aaa; text-align: center; margin-top: 12px; }
+    .success-msg { display: none; text-align: center; padding: 20px; }
+    .success-msg .s-icon { font-size: 3rem; margin-bottom: 12px; }
+    .success-msg h3 { font-family: var(--font-serif); color: var(--brown-dark); margin-bottom: 8px; }
+    .success-msg p { color: var(--text-muted); font-size: 0.9rem; }
+    .mascot-wrap { text-align: center; }
+    .mascot-wrap img { max-width: 200px; }
+    .mascot-wrap p { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: 8px; }
+  </style>
+</head>
+<body class="waitlist-page">
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="logo.png" alt="Writer's Ground" class="logo-img" />
+        <span class="logo-text">Writer's Ground</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html#browse" class="nav-link">Browse</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="waitlist.html" class="btn btn-nav active">Join the Waitlist</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- WAITLIST HERO -->
+  <div class="waitlist-page-hero">
+    <div class="waitlist-page-inner">
+
+      <!-- Left: pitch -->
+      <div class="waitlist-left">
+        <span class="eyebrow">🐾 Early Access</span>
+        <h1>Be first to explore the full Writer's Ground.</h1>
+        <p>We're building a platform that truly serves writers — not just a database, but a complete engine for discovering opportunities, developing your craft, and navigating publishing with confidence.</p>
+        <ul class="waitlist-benefits">
+          <li><span class="b-icon">🚀</span><span><strong>Early platform access</strong> — be among the first to use the full Writer's Ground system when it launches.</span></li>
+          <li><span class="b-icon">🧪</span><span><strong>Beta testing opportunities</strong> — help shape the product by testing new features before they go public.</span></li>
+          <li><span class="b-icon">📬</span><span><strong>Launch updates</strong> — get notified the moment new features, newsletters, and resources go live.</span></li>
+          <li><span class="b-icon">🎁</span><span><strong>Founding member perks</strong> — waitlist members will receive exclusive benefits when the full platform launches.</span></li>
+        </ul>
+      </div>
+
+      <!-- Right: form -->
+      <div class="waitlist-form-col">
+        <div id="form-wrap">
+          <h2>Join the Waitlist</h2>
+          <p class="form-sub">Free. Takes 30 seconds. No spam.</p>
+          <form id="waitlist-form">
+            <div class="form-group">
+              <label for="wl-name">Your name</label>
+              <input type="text" id="wl-name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="wl-email">Email address</label>
+              <input type="email" id="wl-email" placeholder="jane@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="wl-stage">Where are you in your writing journey?</label>
+              <select id="wl-stage">
+                <option value="">Select one…</option>
+                <option>Just starting out</option>
+                <option>Developing my craft</option>
+                <option>Actively submitting work</option>
+                <option>Published, seeking more opportunities</option>
+                <option>Established author</option>
+              </select>
+            </div>
+            <span class="interests-label">What are you most interested in? (select all that apply)</span>
+            <div class="interests-grid">
+              <label class="interest-check"><input type="checkbox" value="submissions" /> Open Submissions</label>
+              <label class="interest-check"><input type="checkbox" value="competitions" /> Competitions</label>
+              <label class="interest-check"><input type="checkbox" value="prizes" /> Literary Prizes</label>
+              <label class="interest-check"><input type="checkbox" value="fellowships" /> Fellowships</label>
+              <label class="interest-check"><input type="checkbox" value="residencies" /> Residencies</label>
+              <label class="interest-check"><input type="checkbox" value="education" /> Education</label>
+              <label class="interest-check"><input type="checkbox" value="pays" /> Pays Writers</label>
+              <label class="interest-check"><input type="checkbox" value="publishing" /> Publishing</label>
+            </div>
+            <button type="submit" class="form-submit">Join the Waitlist →</button>
+            <p class="form-note">We'll never share your email. Unsubscribe any time.</p>
+          </form>
+        </div>
+        <div class="success-msg" id="success-msg">
+          <div class="s-icon">🎉</div>
+          <h3>You're on the list!</h3>
+          <p>Thanks for joining. We'll be in touch when Writer's Ground launches and when beta testing spots open up.</p>
+          <p style="margin-top: 16px;"><a href="index.html" style="color: var(--sage); font-weight: 600;">← Browse opportunities while you wait</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Writer's Ground" class="footer-logo" />
+        <p>A free resource for Australian and New Zealand writers.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <strong>Browse</strong>
+          <a href="index.html#browse">Open Submissions</a>
+          <a href="index.html#browse">Competitions</a>
+          <a href="index.html#browse">Literary Prizes</a>
+          <a href="index.html#browse">Fellowships</a>
+        </div>
+        <div class="footer-col">
+          <strong>&nbsp;</strong>
+          <a href="index.html#browse">Residencies</a>
+          <a href="index.html#browse">Education</a>
+          <a href="index.html#browse">Pays Writers</a>
+          <a href="index.html#browse">Publishers</a>
+        </div>
+        <div class="footer-col">
+          <strong>Writer's Ground</strong>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="events.html">Events</a>
+          <a href="waitlist.html">Join Waitlist</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Writer's Ground · Made with ♥ for Australian writers · Data updated June 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('open');
+    });
+
+    document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
