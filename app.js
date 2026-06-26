@@ -28,7 +28,7 @@ const btnEmptyReset= document.getElementById('btn-empty-reset');
 const siteHeader   = document.getElementById('site-header');
 const hamburger    = document.getElementById('hamburger');
 const mainNav      = document.getElementById('main-nav');
-const nlForm       = document.getElementById('nl-form');
+const nlForm       = document.getElementById('nl-form'); // may be null if newsletter removed
 
 // ── Region class map ────────────────────────────────
 function regionClass(r) {
@@ -81,7 +81,7 @@ function renderSubmission(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.publication || item.name}</div>
           <div class="card-org">${item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -110,7 +110,7 @@ function renderCompetition(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.competition || item.name}</div>
           <div class="card-org">${item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -138,7 +138,7 @@ function renderPrize(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.prize || item.name}</div>
           <div class="card-org">${item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -165,7 +165,7 @@ function renderFellowship(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.fellowship || item.name}</div>
           <div class="card-org">${item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -193,7 +193,7 @@ function renderResidency(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.residency || item.name}</div>
           <div class="card-org">${item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -222,7 +222,7 @@ function renderEducation(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.program || item.name}</div>
           <div class="card-org">${item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -250,7 +250,7 @@ function renderJob(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.platform || item.name}</div>
           <div class="card-org">${item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -279,7 +279,7 @@ function renderPublisher(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.publisher || item.name}</div>
           <div class="card-org">${item.location || item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -306,7 +306,7 @@ function renderPaysWriters(item) {
     <article class="card ${regionClass(item.region)}">
       <div class="card-top">
         <div>
-          <div class="card-name">${item.name}</div>
+          <div class="card-name">${item.publication || item.name}</div>
           <div class="card-org">${item.org}</div>
         </div>
         ${statusBadge(item.status)}
@@ -330,6 +330,60 @@ function renderPaysWriters(item) {
     </article>`;
 }
 
+
+function renderScholarship(item) {
+  return `
+    <article class="card ${regionClass(item.region)}">
+      <div class="card-top">
+        <div>
+          <div class="card-name">${item.scholarship || item.fellowship || item.name}</div>
+          <div class="card-org">${item.org}</div>
+        </div>
+        ${statusBadge(item.status)}
+      </div>
+      <p class="card-desc">${item.desc}</p>
+      <div class="card-tags">
+        <span class="tag tag-region">${item.region}</span>
+        ${item.fee === 'Free' ? '<span class="tag tag-fee">Free to Apply</span>' : `<span class="tag tag-cost">${item.fee}</span>`}
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-icon">💰</span><span class="meta-value">${item.value || 'See site'}</span></div>
+        <div class="meta-item"><span class="meta-icon">📅</span><span class="meta-value ${deadlineClass(item.deadline)}">${item.deadline || 'Check site'}</span></div>
+      </div>
+      <div class="card-footer">
+        <div class="card-eligibility">✍️ ${item.eligibility}</div>
+        <a href="${item.url}" target="_blank" rel="noopener" class="card-link">Visit ${extIcon}</a>
+      </div>
+    </article>`;
+}
+
+function renderFunding(item) {
+  return `
+    <article class="card ${regionClass(item.region)}">
+      <div class="card-top">
+        <div>
+          <div class="card-name">${item.name}</div>
+          <div class="card-org">${item.org}</div>
+        </div>
+        ${statusBadge(item.status)}
+      </div>
+      <p class="card-desc">${item.desc}</p>
+      <div class="card-tags">
+        <span class="tag tag-region">${item.region}</span>
+        <span class="tag tag-type">${item.type || 'Grant'}</span>
+        ${item.fee === 'Free' ? '<span class="tag tag-fee">Free to Apply</span>' : ''}
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-icon">💰</span><span class="meta-value">${item.value || 'See site'}</span></div>
+        <div class="meta-item"><span class="meta-icon">📅</span><span class="meta-value ${deadlineClass(item.deadline)}">${item.deadline || 'Check site'}</span></div>
+      </div>
+      <div class="card-footer">
+        <div class="card-eligibility">✍️ ${item.eligibility || 'See site'}</div>
+        <a href="${item.url}" target="_blank" rel="noopener" class="card-link">Visit ${extIcon}</a>
+      </div>
+    </article>`;
+}
+
 const renderers = {
   submissions:   renderSubmission,
   competitions:  renderCompetition,
@@ -339,6 +393,8 @@ const renderers = {
   education:     renderEducation,
   pays_writers:  renderPaysWriters,
   publishers:    renderPublisher,
+  scholarships:  renderScholarship,
+  funding:       renderFunding,
 };
 
 // ═══════════════════════════════════════════════════
@@ -351,7 +407,7 @@ function getItems() {
 
 function matchesSearch(item, q) {
   if (!q) return true;
-  const haystack = [item.name, item.org, item.desc, item.region,
+  const haystack = [item.name, item.publication, item.competition, item.prize, item.fellowship, item.residency, item.program, item.platform, item.publisher, item.scholarship, item.org, item.desc, item.region,
     ...(item.genres || []), ...(item.types || [])].join(' ').toLowerCase();
   return haystack.includes(q.toLowerCase());
 }
@@ -381,7 +437,7 @@ function matchesToggle(item) {
 function sortItems(items) {
   const copy = [...items];
   if (state.sort === 'name') {
-    copy.sort((a, b) => a.name.localeCompare(b.name));
+    copy.sort((a, b) => (a.name||a.publication||a.competition||a.prize||a.fellowship||a.residency||a.program||a.platform||a.publisher||a.scholarship||'').localeCompare(b.name||b.publication||b.competition||b.prize||b.fellowship||b.residency||b.program||b.platform||b.publisher||b.scholarship||''));
   } else if (state.sort === 'deadline') {
     // Simple: items with 'June' or 'July' first
     const urgency = d => {
@@ -402,6 +458,28 @@ function sortItems(items) {
     copy.sort((a, b) => val(b.value || b.prize) - val(a.value || a.prize));
   }
   return copy;
+}
+
+function showLoadingSkeleton() {
+  cardsGrid.style.display = 'grid';
+  emptyState.style.display = 'none';
+  resultsCount.textContent = '';
+  resultsLabel.textContent = 'Loading opportunities…';
+  cardsGrid.innerHTML = Array(6).fill(0).map(() => `
+    <div class="card skeleton-card">
+      <div class="skeleton-stripe"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-line wide"></div>
+        <div class="skeleton-line medium"></div>
+        <div class="skeleton-line narrow"></div>
+        <div class="skeleton-tags">
+          <div class="skeleton-tag"></div>
+          <div class="skeleton-tag"></div>
+          <div class="skeleton-tag"></div>
+        </div>
+        <div class="skeleton-line medium" style="margin-top:12px"></div>
+      </div>
+    </div>`).join('');
 }
 
 function render() {
@@ -527,8 +605,8 @@ hamburger.addEventListener('click', () => {
   mainNav.classList.toggle('open');
 });
 
-// Newsletter form
-nlForm.addEventListener('submit', e => {
+// Newsletter form (guard in case element doesn't exist)
+if (nlForm) nlForm.addEventListener('submit', e => {
   e.preventDefault();
   const toast = document.createElement('div');
   toast.className = 'toast';
@@ -541,6 +619,7 @@ nlForm.addEventListener('submit', e => {
   }, 3500);
   nlForm.reset();
 });
+// end newsletter guard
 
 // Footer tab links
 window.switchTab = function(cat) {
@@ -555,7 +634,21 @@ window.switchTab = function(cat) {
 };
 
 // ═══════════════════════════════════════════════════
-//  INIT
+//  INIT — load data then render
 // ═══════════════════════════════════════════════════
-buildGenreFilter();
-render();
+if (typeof loadData === 'function') {
+  // Show skeleton immediately while fetch is in progress
+  showLoadingSkeleton();
+  // Google Sheets sync is available — use it
+  loadData(function(data, source) {
+    // Merge loaded data into WG_DATA
+    Object.assign(WG_DATA, data);
+    buildGenreFilter();
+    render();
+    showDataSourceBadge(source);
+  });
+} else {
+  // Fallback: use static data.js directly
+  buildGenreFilter();
+  render();
+}

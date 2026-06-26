@@ -89,13 +89,15 @@
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo-link">
-        <img src="logo.png" alt="Writer's Ground" class="logo-img" />
+        <img src="Wombat_no_bg.png" alt="Writer's Ground" class="logo-img" />
         <span class="logo-text">Writer's Ground</span>
       </a>
       <nav class="main-nav" id="main-nav">
         <a href="index.html#browse" class="nav-link">Browse</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="blog.html" class="nav-link">Blog</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="events.html" class="nav-link">Events</a>
         <a href="waitlist.html" class="btn btn-nav active">Join the Waitlist</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -119,25 +121,48 @@
           <li><span class="b-icon">📬</span><span><strong>Launch updates</strong> — get notified the moment new features, newsletters, and resources go live.</span></li>
           <li><span class="b-icon">🎁</span><span><strong>Founding member perks</strong> — waitlist members will receive exclusive benefits when the full platform launches.</span></li>
         </ul>
+        <div class="mascot-wrap">
+          <img src="Wombat_no_bg.png" alt="Writer's Ground wombat" />
+          <p>The wombat's watching the burrow. You should be too.</p>
+        </div>
       </div>
 
-      <!-- Right: form -->
+      <!-- Right: form — Netlify Forms enabled via netlify -->
       <div class="waitlist-form-col">
         <div id="form-wrap">
           <h2>Join the Waitlist</h2>
           <p class="form-sub">Free. Takes 30 seconds. No spam.</p>
-          <form id="waitlist-form">
+
+          <!--
+            Netlify Forms: the `netlify` attribute tells Netlify to
+            intercept this form and store all submissions in your dashboard.
+            The `name` attribute on the form is how it appears in Netlify Forms.
+          -->
+          <form
+            id="waitlist-form"
+            name="waitlist"
+            method="POST"
+            netlify
+            netlify-honeypot="bot-field"
+            action="/waitlist-success.html"
+          >
+            <!-- Netlify hidden fields -->
+            <input type="hidden" name="form-name" value="waitlist" />
+            <p style="display:none;">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
             <div class="form-group">
               <label for="wl-name">Your name</label>
-              <input type="text" id="wl-name" placeholder="Jane Smith" required />
+              <input type="text" id="wl-name" name="name" placeholder="Jane Smith" required />
             </div>
             <div class="form-group">
               <label for="wl-email">Email address</label>
-              <input type="email" id="wl-email" placeholder="jane@example.com" required />
+              <input type="email" id="wl-email" name="email" placeholder="jane@example.com" required />
             </div>
             <div class="form-group">
               <label for="wl-stage">Where are you in your writing journey?</label>
-              <select id="wl-stage">
+              <select id="wl-stage" name="writing-stage">
                 <option value="">Select one…</option>
                 <option>Just starting out</option>
                 <option>Developing my craft</option>
@@ -148,24 +173,19 @@
             </div>
             <span class="interests-label">What are you most interested in? (select all that apply)</span>
             <div class="interests-grid">
-              <label class="interest-check"><input type="checkbox" value="submissions" /> Open Submissions</label>
-              <label class="interest-check"><input type="checkbox" value="competitions" /> Competitions</label>
-              <label class="interest-check"><input type="checkbox" value="prizes" /> Literary Prizes</label>
-              <label class="interest-check"><input type="checkbox" value="fellowships" /> Fellowships</label>
-              <label class="interest-check"><input type="checkbox" value="residencies" /> Residencies</label>
-              <label class="interest-check"><input type="checkbox" value="education" /> Education</label>
-              <label class="interest-check"><input type="checkbox" value="pays" /> Pays Writers</label>
-              <label class="interest-check"><input type="checkbox" value="publishing" /> Publishing</label>
+              <label class="interest-check"><input type="checkbox" name="interest-submissions" value="Open Submissions" /> Open Submissions</label>
+              <label class="interest-check"><input type="checkbox" name="interest-competitions" value="Competitions" /> Competitions</label>
+              <label class="interest-check"><input type="checkbox" name="interest-prizes" value="Literary Prizes" /> Literary Prizes</label>
+              <label class="interest-check"><input type="checkbox" name="interest-fellowships" value="Fellowships" /> Fellowships</label>
+              <label class="interest-check"><input type="checkbox" name="interest-residencies" value="Residencies" /> Residencies</label>
+              <label class="interest-check"><input type="checkbox" name="interest-education" value="Education" /> Education</label>
+              <label class="interest-check"><input type="checkbox" name="interest-pays" value="Pays Writers" /> Pays Writers</label>
+              <label class="interest-check"><input type="checkbox" name="interest-publishing" value="Publishing" /> Publishing</label>
+              <label class="interest-check"><input type="checkbox" name="interest-scholarships" value="Scholarships" /> Scholarships</label>
             </div>
             <button type="submit" class="form-submit">Join the Waitlist →</button>
             <p class="form-note">We'll never share your email. Unsubscribe any time.</p>
           </form>
-        </div>
-        <div class="success-msg" id="success-msg">
-          <div class="s-icon">🎉</div>
-          <h3>You're on the list!</h3>
-          <p>Thanks for joining. We'll be in touch when Writer's Ground launches and when beta testing spots open up.</p>
-          <p style="margin-top: 16px;"><a href="index.html" style="color: var(--sage); font-weight: 600;">← Browse opportunities while you wait</a></p>
         </div>
       </div>
 
@@ -176,23 +196,62 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="logo.png" alt="Writer's Ground" class="footer-logo" />
+        <img src="Wombat_no_bg.png" alt="Writer's Ground" class="footer-logo" />
         <p>A free resource for Australian and New Zealand writers.</p>
+      <div class="footer-social">
+        <span class="social-label">Follow us</span>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Facebook" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube" title="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--brown-dark)" style="fill:#2C1A0E"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Spotify" title="Spotify">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 13.5c2.5-1 5.5-.8 7.5.5" stroke="var(--brown-dark)" stroke-width="1.5" stroke-linecap="round" fill="none" style="stroke:#2C1A0E"/>
+              <path d="M7 11c3-1.2 6.5-1 9 .8" stroke="var(--brown-dark)" stroke-width="1.5" stroke-linecap="round" fill="none" style="stroke:#2C1A0E"/>
+              <path d="M6.5 8.5c3.5-1.5 7.5-1.2 10.5 1" stroke="var(--brown-dark)" stroke-width="1.5" stroke-linecap="round" fill="none" style="stroke:#2C1A0E"/>
+            </svg>
+          </a>
+        </div>
+      </div>
       </div>
       <div class="footer-links">
         <div class="footer-col">
           <strong>Browse</strong>
-          <a href="index.html#browse">Open Submissions</a>
-          <a href="index.html#browse">Competitions</a>
-          <a href="index.html#browse">Literary Prizes</a>
-          <a href="index.html#browse">Fellowships</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('submissions')">Open Submissions</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('competitions')">Competitions</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('prizes')">Literary Prizes</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('fellowships')">Fellowships</a>
         </div>
         <div class="footer-col">
           <strong>&nbsp;</strong>
-          <a href="index.html#browse">Residencies</a>
-          <a href="index.html#browse">Education</a>
-          <a href="index.html#browse">Pays Writers</a>
-          <a href="index.html#browse">Publishers</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('residencies')">Residencies</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('education')">Education</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('pays_writers')">Pays Writers</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('publishers')">Publishers</a>
+          <a href="index.html#browse" onclick="switchTab && switchTab('scholarships')">Scholarships</a>
         </div>
         <div class="footer-col">
           <strong>Writer's Ground</strong>
@@ -216,12 +275,6 @@
     });
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('main-nav').classList.toggle('open');
-    });
-
-    document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('form-wrap').style.display = 'none';
-      document.getElementById('success-msg').style.display = 'block';
     });
   </script>
 </body>
